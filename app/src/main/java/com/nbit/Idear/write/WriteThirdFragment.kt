@@ -32,8 +32,6 @@ class WriteThirdFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentWriteThirdBinding.inflate(inflater, container, false)
 
-        hideKeyboard()
-
         binding.btnNext.setOnClickListener {
                 parentFragmentManager.beginTransaction()
                     .add(R.id.fl_write, WriteFourthFragment())
@@ -53,6 +51,12 @@ class WriteThirdFragment : Fragment() {
         binding.rvProfile.adapter = adapter
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        hideKeyboard()
     }
 
     override fun onDestroyView() {
