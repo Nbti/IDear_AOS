@@ -1,6 +1,7 @@
 package com.nbit.Idear.write
 
 import android.R
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,7 +24,23 @@ class WriteFourthFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentWriteFourthBinding.inflate(inflater, container, false)
 
-        var aiTextAdapter = AiTextAdapter()
+        var aiTextAdapter = AiTextAdapter() { aa, type ->
+            when (type) {
+                0 -> {
+
+                }
+                1 -> {
+                    val intent= Intent(Intent.ACTION_SEND)
+                    intent.type = "text/plain"
+                    intent.putExtra(Intent.EXTRA_TEXT,aa.trim())
+                    startActivity(Intent.createChooser(intent,"공유하기"))
+                }
+                2 -> {
+                    activity?.finish()
+                }
+            }
+
+        }
 
 
         val item1 = AiTextResult("1231123123",false)

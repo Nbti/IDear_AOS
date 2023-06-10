@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayoutManager
@@ -24,6 +25,8 @@ class WriteFirstFragment : Fragment() {
     private var select: Boolean = false
     private var selectItem: String = ""
     private var next: Int = 0
+
+    //private val viewModel: WriteViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentWriteFirstBinding.inflate(inflater, container, false)
@@ -78,6 +81,14 @@ class WriteFirstFragment : Fragment() {
                     .addToBackStack("Write")
                     .commit()
         }
+
+//        viewModel.test()
+
+
+
+
+
+
         return binding.root
     }
 
