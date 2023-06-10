@@ -42,7 +42,7 @@ class MbtiAdapter (
             binding.textMbtiTopUnselect.text = item.topMbti
 
             binding.textMbtiBottomSelect.text = item.bottomMbti
-            binding.textMbtiTopUnselect.text = item.bottomMbti
+            binding.textMbtiBottomUnselect.text = item.bottomMbti
 
             // mbti 선택 안 됨
             if(item.unselect) {
