@@ -51,7 +51,9 @@ class MyPageActivity : AppCompatActivity() {
         binding = ActivityMyPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 이전 버튼
+        binding.textProfileListCount.text = "0"
+
+                // 이전 버튼
         binding.btnBack.setOnClickListener {
             finish()
         }
@@ -113,6 +115,8 @@ class MyPageActivity : AppCompatActivity() {
             checkNew = true
         }
         itemCount = items.size
+
+        binding.textProfileListCount.text = itemCount.toString()
 
         for(i in 0..(items.size - 2)) {
             var formal: String = "반말"
