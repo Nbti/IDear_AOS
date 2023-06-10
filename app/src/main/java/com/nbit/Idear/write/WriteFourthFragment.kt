@@ -12,29 +12,31 @@ import com.google.android.flexbox.FlexboxLayoutManager
 import com.google.android.flexbox.JustifyContent
 import com.nbit.Idear.R
 import com.nbit.Idear.databinding.FragmentWriteFirstBinding
+import com.nbit.Idear.databinding.FragmentWriteFourthBinding
 import com.nbit.Idear.databinding.FragmentWriteSecondPrivateBinding
 import com.nbit.Idear.databinding.FragmentWriteThirdBinding
+import com.nbit.Idear.text.AiTextAdapter
+import com.nbit.Idear.text.AiTextResult
 
 class WriteFourthFragment : Fragment() {
 
-    private lateinit var flexBoxAdapter: FlexBoxAdapter
-
-    private var _binding: FragmentWriteThirdBinding? = null
+    private var _binding: FragmentWriteFourthBinding? = null
     private val binding get() = _binding!!
 
-    private var select: Boolean = false
-    private var selectItem: String = ""
-    private var next: Int = 0
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = FragmentWriteThirdBinding.inflate(inflater, container, false)
+        _binding = FragmentWriteFourthBinding.inflate(inflater, container, false)
 
-        binding.btnNext.setOnClickListener {
-                parentFragmentManager.beginTransaction()
-                    .add(R.id.fl_write, WriteSecondPrivateFragment())
-                    .addToBackStack("Write")
-                    .commit()
-        }
+        var aiTextAdapter = AiTextAdapter()
+
+
+        val item1 = AiTextResult("1231123123",false)
+        val item2 = AiTextResult("2231123123",false)
+        val item3 = AiTextResult("333",false)
+
+        aiTextAdapter.addItem(item1)
+        aiTextAdapter.addItem(item2)
+        aiTextAdapter.addItem(item3)
+        binding.viewpagerText.adapter = aiTextAdapter
         return binding.root
     }
 

@@ -15,10 +15,11 @@
             android:name=".mypage.MyPageActivity"
             android:exported="false" />
         <activity
-            android:name=".write.WriteActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".write.WriteActivity"
+
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
