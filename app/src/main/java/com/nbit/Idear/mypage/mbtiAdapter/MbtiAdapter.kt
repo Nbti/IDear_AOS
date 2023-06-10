@@ -69,13 +69,13 @@ class MbtiAdapter (
                 binding.textMbtiBottomSelect.visibility = View.VISIBLE
             }
 
-            binding.textMbtiTopUnselect.setOnClickListener(View.OnClickListener {
-                item.isSelectTop = true
+            binding.textMbtiTopSelect.setOnClickListener(View.OnClickListener {
+                item.isSelectTop = false
                 select(position)
             })
 
-            binding.textMbtiBottomUnselect.setOnClickListener(View.OnClickListener {
-                item.isSelectTop = false
+            binding.textMbtiBottomSelect.setOnClickListener(View.OnClickListener {
+                item.isSelectTop = true
                 select(position)
             })
         }
