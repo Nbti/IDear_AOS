@@ -32,9 +32,14 @@ class MyPageActivity : AppCompatActivity() {
         initRecycler()
 
         // 샘플 데이터
-        addMoveFolderItem(ProfileListItem(0, "귀여운", "ESFP", "반말", ContextCompat.getColor(this, R.color.profile_yello)))
-        addMoveFolderItem(ProfileListItem(0, "귀여운", "ESFP", "반말", ContextCompat.getColor(this, R.color.profile_yello)))
-        addMoveFolderItem(ProfileListItem(0, "귀여운", "ESFP", "반말", ContextCompat.getColor(this, R.color.profile_yello)))
+        addMoveFolderItem(ProfileListItem(0, "귀여운", "ESFP", "반말", ContextCompat.getColor(this, R.color.profile_yello), true))
+        addMoveFolderItem(ProfileListItem(0, "귀여운", "ESFP", "반말", ContextCompat.getColor(this, R.color.profile_yello), false))
+        addMoveFolderItem(ProfileListItem(0, "귀여운", "ESFP", "반말", ContextCompat.getColor(this, R.color.profile_yello), false))
+
+        // 이전 버튼
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
 
         // 프로필 추가 버튼
         binding.linearAddProfile.setOnClickListener ( View.OnClickListener {
