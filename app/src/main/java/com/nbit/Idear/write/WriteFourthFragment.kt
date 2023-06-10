@@ -50,6 +50,11 @@ class WriteFourthFragment : Fragment() {
                 page.translationY = myOffset
             }
         })
+
+        binding.btnRequest.setOnClickListener {
+            val item4 = AiTextResult("123123123123",false)
+            aiTextAdapter.addItem(item4)
+        }
         return binding.root
     }
 
