@@ -16,31 +16,45 @@ class ProxyWriteAdapter (private val dataList:ArrayList<ProxyWriteData>):
             viewBinding.yearText.text = data.year.toString()
             viewBinding.monthText.text = data.month.toString()
             viewBinding.dayText.text = data.day.toString()
+            viewBinding.titleText.text=data.title
 
             viewBinding.mainContent.text = data.content
 
-            if (data.additionalContent.size != 0) {
+
                 viewBinding.upBtn.setOnClickListener {
-                    if (!viewBinding.upBtn.isSelected) {
-                        viewBinding.upBtn.setImageResource(R.drawable.downbtn)
-                        viewBinding.subCardView.visibility=View.VISIBLE
-                        viewBinding.recyclerView.visibility = View.VISIBLE
+                    if (data.additionalContent!= null) {
+                        if (!viewBinding.upBtn.isSelected) {
+                            viewBinding.upBtn.setImageResource(R.drawable.downbtn)
+                            viewBinding.subCardView.visibility=View.VISIBLE
+                            viewBinding.recyclerView.visibility = View.VISIBLE
 
 
-                        viewBinding.recyclerView.apply {
-                            setHasFixedSize(true)
-                            layoutManager = LinearLayoutManager(viewBinding.root.context)
-                            adapter = SubAdapter(data.additionalContent)
+                            viewBinding.recyclerView.apply {
+                                setHasFixedSize(true)
+                                layoutManager = LinearLayoutManager(viewBinding.root.context)
+                                adapter = SubAdapter(data.additionalContent)
+                            }
+                            viewBinding.upBtn.isSelected = true
+                        } else {
+                            viewBinding.upBtn.setImageResource(R.drawable.upbtn)
+                            viewBinding.subCardView.visibility=View.GONE
+                            viewBinding.recyclerView.visibility = View.GONE
+
+                            viewBinding.upBtn.isSelected = false
                         }
-                        viewBinding.upBtn.isSelected = true
-                    } else {
-                        viewBinding.upBtn.setImageResource(R.drawable.upbtn)
-                        viewBinding.subCardView.visibility=View.GONE
-                        viewBinding.recyclerView.visibility = View.GONE
 
-                        viewBinding.upBtn.isSelected = false
-                    }
+                }
+                  else{
+                        if (!viewBinding.upBtn.isSelected) {
+                            viewBinding.subCardView.visibility=View.VISIBLE
+                            viewBinding.upBtn.isSelected = true
 
+                        }
+                        else {
+                            viewBinding.subCardView.visibility=View.GONE
+                            viewBinding.upBtn.isSelected = false
+                        }
+                  }
                 }
             }
 
@@ -48,7 +62,7 @@ class ProxyWriteAdapter (private val dataList:ArrayList<ProxyWriteData>):
         }
 
 
-    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProxyWriteAdapter.DataViewHolder {
         val binding = ItemWriteBinding.inflate(LayoutInflater.from(parent.context), parent, false)
