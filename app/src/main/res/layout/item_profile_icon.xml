@@ -12,23 +12,23 @@
     android:gravity="center">
 
     <!-- 분위기 키워드 -->
-    <TextView
+    <!--<TextView
         android:id="@+id/text_mood_keyword_for_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="귀여운"
         android:textSize="10sp"
         android:textStyle="bold"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"/>-->
 
     <!-- 엠비티아이 -->
-    <TextView
+    <!--<TextView
         android:id="@+id/text_mbti_for_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ESFP"
         android:textSize="10sp"
         android:textStyle="bold"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"/>-->
 
 </LinearLayout>

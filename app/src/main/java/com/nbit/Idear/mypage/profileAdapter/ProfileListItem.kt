@@ -9,4 +9,5 @@ data class ProfileListItem(
     val mbti: String,        // 엠비티아이
     val formal: String,      // 반말, 존댓말
     val bgColor: Int,        // 프로필 원 배경 색상
+    val isNew: Boolean,      // 새로운 프로필인지
 )

@@ -1,9 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- 프로필 추가 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mypage.AddProfileActivity">
+    tools:context=".mypage.AddProfileActivity"
+    android:background="@color/white">
+
+    <!-- 상단 메뉴 -->
+    <RelativeLayout
+        android:id="@+id/relative_add_profile_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp">
+
+        <!-- 이전 버튼 -->
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginLeft="16dp"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_back_arrow"
+            android:background="@color/translate"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+
+        <!-- 페이지 명 -->
+        <TextView
+            android:id="@+id/text_add_profile_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_profile_label"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <!-- 분위기 카테고리 선택 -->
+    <LinearLayout
+        android:id="@+id/linear_select_mood_keyword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="vertical"
+        android:layout_below="@id/relative_add_profile_header">
+
+        <!-- 분위기 카테고리 -->
+        <TextView
+            android:id="@+id/text_select_mood_keyword_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_mood_keyword_label"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/text_select_mood_keyword_notice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/select_mood_keyword_notice"
+            android:textColor="@color/more_info"
+            android:textSize="12sp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_mood_keyword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/item_mood_keyword_profile"/>
+
+
+    </LinearLayout>
 
 </RelativeLayout>
