@@ -1,6 +1,5 @@
 package com.nbit.Idear.home
 
-<<<<<<< HEAD
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -93,8 +92,4 @@ class ProxyWriteAdapter (private val dataList:ArrayList<ProxyWriteData>):
         return dataList.size
     }
 
-
-=======
-class ProxyWriteAdapter {
->>>>>>> 7a48907 ([ADD] adapter)
 }

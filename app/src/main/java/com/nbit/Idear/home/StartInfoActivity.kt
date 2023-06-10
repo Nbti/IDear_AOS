@@ -12,6 +12,21 @@ class StartInfoActivity : AppCompatActivity() {
 
         binding=ActivityStartInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+/*
+        val extras=intent.extras
+
+        val yearData=extras!!.getInt("result1")
+        val monthData=extras!!.getInt("result2")
+        val dayData=extras!!.getInt("result3")
+        val contentData=extras!!.getString("result4")
+
+        binding.yearText.text=yearData.toString()
+        binding.monthText.text=monthData.toString()
+        binding.dayText.text=dayData.toString()
+
+        binding.tvAiText.text=contentData.toString()
+
+ */
 
         binding.leftArrowBtn.setOnClickListener {
             finish()

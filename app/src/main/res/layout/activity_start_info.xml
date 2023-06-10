@@ -136,7 +136,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="너에게 전하는 편지" />
+                android:text="{친구}에게 전하는 편지" />
         </LinearLayout>
 
         <ImageButton
