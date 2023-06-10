@@ -1,14 +1,17 @@
 package com.nbit.Idear.text
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.constraintlayout.utils.widget.ImageFilterButton
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.nbit.Idear.R
 
-class AiTextAdapter: RecyclerView.Adapter<AiTextAdapter.ViewHolder>() {
+class AiTextAdapter(private val buttonClickListener: (String, Int) -> Unit): RecyclerView.Adapter<AiTextAdapter.ViewHolder>() {
 
     private val items: MutableList<AiTextResult> = mutableListOf()
 
@@ -25,7 +28,6 @@ class AiTextAdapter: RecyclerView.Adapter<AiTextAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: AiTextAdapter.ViewHolder, position: Int) {
         val item = items[position]
         holder.bind(item)
-
     }
 
     override fun getItemCount(): Int {
@@ -35,10 +37,22 @@ class AiTextAdapter: RecyclerView.Adapter<AiTextAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val textView1: TextView = itemView.findViewById(R.id.tv_ai_text)
         private val favBtn: ImageFilterButton = itemView.findViewById(R.id.btn_favorite)
+        private val shareBtn: ImageFilterButton = itemView.findViewById(R.id.btn_share)
+        private val completeBtn: Button = itemView.findViewById(R.id.btn_complete)
 
         fun bind(item: AiTextResult) {
             textView1.text = item.content
             favBtn.isSelected = item.favorite
+
+            shareBtn.setOnClickListener {
+                buttonClickListener.invoke(textView1.text.toString(), 1)
+            }
+            favBtn.setOnClickListener {
+                buttonClickListener.invoke(item.content, 0)
+            }
+            completeBtn.setOnClickListener {
+                buttonClickListener.invoke(item.content, 2)
+            }
         }
     }
 }

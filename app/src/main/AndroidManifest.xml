@@ -2,15 +2,32 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.IDear"
         tools:targetApi="31">
+        <activity
+            android:name=".home.WriteRecordInfoActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".home.StartInfoActivity"
+            android:exported="false"></activity>
+        
+        <activity
+            android:name=".home.StarActivity"
+            android:exported="false" />
         <activity
             android:name=".mypage.AddProfileActivity"
             android:exported="false" />
