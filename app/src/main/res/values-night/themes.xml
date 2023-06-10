@@ -9,11 +9,25 @@
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
 
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- 상태바까지 view를 보여줄 수 있다-->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     </style>
+
+    <!-- 메뉴바 열릴 때 상태바 -->
+    <style name="Theme.IDear.TransparentStatusBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!--drawerlayout statusbar -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
 </resources>
