@@ -10,6 +10,7 @@
     tools:openDrawer="end"
     android:fitsSystemWindows="true">
 
+    <!-- 메인 페이지 -->
     <include
         android:id="@+id/include_main_activity"
         android:layout_width="match_parent"
@@ -19,18 +20,96 @@
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"
         android:orientation="vertical"
+        android:background="@color/white"
+        app:itemTextColor="@color/black"
         android:layout_gravity="end"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!-- 메뉴 목록 -->
         <LinearLayout
+            android:id="@+id/linear_menu"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="150dp"
+                android:background="@color/black"/>
+
+            <!-- 마이 페이지 -->
+            <Button
+                android:id="@+id/btn_menu_mypage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="test 메뉴"/>
+                android:layout_marginLeft="15dp"
+                android:background="@color/translate"
+                android:textColor="@color/black"
+                style="?android:attr/borderlessButtonStyle"
+                android:text="@string/menu_my_page"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"/>
+
+            <!-- 즐겨찾기 목록 -->
+            <Button
+                android:id="@+id/btn_menu_bookmark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@color/translate"
+                android:textColor="@color/black"
+                style="?android:attr/borderlessButtonStyle"
+                android:text="@string/menu_bookmark"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"/>
+
+            <!-- 환경 설정 -->
+            <Button
+                android:id="@+id/btn_menu_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@color/translate"
+                android:textColor="@color/black"
+                style="?android:attr/borderlessButtonStyle"
+                android:text="@string/menu_setting"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"/>
+
+            <!-- 로그인/로그아웃 -->
+            <Button
+                android:id="@+id/btn_menu_login_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:background="@color/translate"
+                android:textColor="@color/black"
+                style="?android:attr/borderlessButtonStyle"
+                android:text="@string/menu_login_logout"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"/>
 
         </LinearLayout>
 

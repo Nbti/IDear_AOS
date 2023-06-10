@@ -1,25 +1,65 @@
 package com.nbit.Idear
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.view.GravityCompat
 import com.nbit.Idear.databinding.ActivityMainBinding
 import com.nbit.Idear.databinding.MainIncludeDrawerBinding
+import com.nbit.Idear.mypage.MyPageActivity
 
+// 메인 페이지
 class MainActivity : AppCompatActivity() {
     // ViewBinding Setting
-    lateinit var drawerBinding: MainIncludeDrawerBinding
-    lateinit var mainBinding: ActivityMainBinding
+    lateinit var drawerBinding: MainIncludeDrawerBinding // 메뉴 Drawer
+    lateinit var mainBinding: ActivityMainBinding        // 메인 페이지
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // ViewBinding Setting
+        // 메뉴 Drawer ViewBinding
         drawerBinding = MainIncludeDrawerBinding.inflate(layoutInflater)
         setContentView(drawerBinding.root)
 
+        // 메인 페이지 viewBinding
         mainBinding = drawerBinding.includeMainActivity
+
+        // 메뉴 열기 버튼 누르면 열림
         mainBinding.btnOpenMenu.setOnClickListener {
             drawerBinding.mainDrawerLayout.openDrawer((GravityCompat.END))
+        }
+
+        // 마이페이지 메뉴 버튼 선택
+        drawerBinding.btnMenuMypage.setOnClickListener {
+            // 마이페이지 이동
+            val intent = Intent(this, MyPageActivity::class.java)
+            startActivity(intent)
+
+            // 메뉴 닫기
+            drawerBinding.mainDrawerLayout.closeDrawer((GravityCompat.END))
+        }
+
+        // 즐겨찾기 메뉴 버튼 선택
+        drawerBinding.btnMenuBookmark.setOnClickListener {
+            // 즐겨찾기 목록 이동
+
+            // 메뉴 닫기
+            drawerBinding.mainDrawerLayout.closeDrawer((GravityCompat.END))
+        }
+
+        // 환경설정 메뉴 버튼 선택
+        drawerBinding.btnMenuSetting.setOnClickListener {
+            // 환경설정 이동
+
+            // 메뉴 닫기
+            drawerBinding.mainDrawerLayout.closeDrawer((GravityCompat.END))
+        }
+
+        // 로그인/로그아웃 메뉴 버튼 선택
+        drawerBinding.btnMenuLoginLogout.setOnClickListener {
+            // 로그인/로그아웃 이동
+
+            // 메뉴 닫기
+            drawerBinding.mainDrawerLayout.closeDrawer((GravityCompat.END))
         }
     }
 }
