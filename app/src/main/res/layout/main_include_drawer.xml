@@ -43,94 +43,148 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="150dp"
-                android:background="@color/idear_gray_200"/>
+                android:layout_marginTop="120dp"
+                android:background="@color/idear_gray_200" />
 
             <!-- 마이 페이지 -->
             <RelativeLayout
+                android:id="@+id/btn_menu_mypage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <Button
-                    android:id="@+id/btn_menu_mypage"
+                <TextView
+                    android:id="@+id/text_menu_mypage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="0dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginVertical="16dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginVertical="5dp"
-                    android:background="@color/translate"
-                    android:textColor="@color/idear_gray_800"
-                    style="?android:attr/borderlessButtonStyle"
                     android:text="@string/menu_my_page"
+                    android:textColor="@color/idear_gray_800"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="14dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_open_arrow_right" />
 
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/idear_gray_200"/>
+                android:background="@color/idear_gray_200" />
 
             <!-- 즐겨찾기 목록 -->
-            <Button
+            <RelativeLayout
                 android:id="@+id/btn_menu_bookmark"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="0dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginVertical="5dp"
-                android:background="@color/translate"
-                android:textColor="@color/idear_gray_800"
-                style="?android:attr/borderlessButtonStyle"
-                android:text="@string/menu_bookmark"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_menu_bookmark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginVertical="16dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/menu_bookmark"
+                    android:textColor="@color/idear_gray_800"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="14dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_open_arrow_right" />
+
+            </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/idear_gray_200"/>
+                android:background="@color/idear_gray_200" />
 
             <!-- 환경 설정 -->
-            <Button
+            <RelativeLayout
                 android:id="@+id/btn_menu_setting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="0dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginVertical="5dp"
-                android:background="@color/translate"
-                android:textColor="@color/idear_gray_800"
-                style="?android:attr/borderlessButtonStyle"
-                android:text="@string/menu_setting"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_menu_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginVertical="16dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/menu_setting"
+                    android:textColor="@color/idear_gray_800"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="14dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_open_arrow_right" />
+
+            </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/idear_gray_200"/>
+                android:background="@color/idear_gray_200" />
 
             <!-- 로그인/로그아웃 -->
-            <Button
-                android:id="@+id/btn_menu_login_logout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="0dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginVertical="5dp"
-                android:background="@color/translate"
-                android:textColor="@color/idear_gray_800"
-                style="?android:attr/borderlessButtonStyle"
-                android:text="@string/menu_login_logout"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+            <RelativeLayout
+                android:id="@+id/btn_menu_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_menu_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginVertical="16dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/menu_logout"
+                    android:textColor="@color/idear_gray_800"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="14dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_open_arrow_right" />
+
+            </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/idear_gray_200"/>
+                android:background="@color/idear_gray_200" />
 
         </LinearLayout>
 

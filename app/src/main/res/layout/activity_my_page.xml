@@ -50,28 +50,62 @@
 
     </RelativeLayout>
 
-    <!-- 프로필 리스트 -->
-    <TextView
-        android:id="@+id/text_profile_list_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/my_page_label"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_below="@id/relative_mypage_header"/>
-
-
-    <!-- 프로필 추가 버튼 -->
-    <LinearLayout
-        android:id="@+id/linear_add_profile"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_below="@id/relative_mypage_header">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- 프로필 리스트 -->
+            <TextView
+                android:id="@+id/text_profile_list_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_page_label"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_profile_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_profile_list"
+                android:layout_below="@id/text_profile_list_label"/>
 
 
+            <!-- 프로필 추가 버튼 -->
+            <LinearLayout
+                android:id="@+id/linear_add_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shape_add_profile"
+                android:layout_below="@id/recycler_profile_list"
+                android:gravity="center">
 
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_add_profile"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"/>
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/text_add_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_profile"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
 
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>
