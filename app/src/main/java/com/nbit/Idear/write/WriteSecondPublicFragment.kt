@@ -33,9 +33,9 @@ class WriteSecondPublicFragment : Fragment() {
             // 버튼 클릭 이벤트 처리
             //데이터 처리
             if (selected) {
-                next ++
-            } else {
                 next --
+            } else {
+                next ++
             }
             onNextButton()
             Toast.makeText(context,"클릭한 버튼: $buttonText",Toast.LENGTH_SHORT).show()
@@ -63,7 +63,7 @@ class WriteSecondPublicFragment : Fragment() {
         _binding = null
     }
     private fun onNextButton() {
-        binding.btnNext.isEnabled = (next != 0)
+        binding.btnNext.isEnabled = (next > 0)
     }
 
 

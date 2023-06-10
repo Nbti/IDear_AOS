@@ -1,6 +1,7 @@
 package com.nbit.Idear.write
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +19,8 @@ class WriteSecondPrivateFragment : Fragment() {
 
     private lateinit var flexBoxAdapter: FlexBoxAdapter
 
+    private var next: Int = 0
+
     private var _binding: FragmentWriteSecondPrivateBinding? = null
     private val binding get() = _binding!!
 
@@ -28,6 +31,13 @@ class WriteSecondPrivateFragment : Fragment() {
         flexBoxAdapter = FlexBoxAdapter(buttonTextList) { buttonText, selected ->
             // 버튼 클릭 이벤트 처리
             //데이터 처리
+            if (selected) {
+                next --
+            } else {
+                next ++
+            }
+            onNextButton()
+            Log.d("TEST","$next")
             Toast.makeText(context,"클릭한 버튼: $buttonText",Toast.LENGTH_SHORT).show()
         }
 
@@ -52,6 +62,10 @@ class WriteSecondPrivateFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun onNextButton() {
+        binding.btnNext.isEnabled = (next > 0)
     }
 
 

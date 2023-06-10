@@ -6,42 +6,43 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".write.WriteSecondPrivateFragment">
+
     <LinearLayout
         android:id="@+id/indicator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="8dp"
+        android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.utils.widget.ImageFilterView
             android:layout_width="0dp"
             android:layout_height="7dp"
-            android:layout_weight="1"
             android:layout_marginHorizontal="2dp"
-            android:src="@drawable/ic_indicator_after"/>
+            android:layout_weight="1"
+            android:src="@drawable/ic_indicator_after" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterView
             android:layout_width="0dp"
             android:layout_height="7dp"
-            android:layout_weight="1"
             android:layout_marginHorizontal="2dp"
-            android:src="@drawable/ic_indicator_selector"/>
+            android:layout_weight="1"
+            android:src="@drawable/ic_indicator_selector" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterView
             android:layout_width="0dp"
             android:layout_height="7dp"
-            android:layout_weight="1"
             android:layout_marginHorizontal="2dp"
-            android:src="@drawable/ic_indicator_before"/>
+            android:layout_weight="1"
+            android:src="@drawable/ic_indicator_before" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterView
             android:layout_width="0dp"
             android:layout_height="7dp"
-            android:layout_weight="1"
             android:layout_marginHorizontal="2dp"
-            android:src="@drawable/ic_indicator_before"/>
+            android:layout_weight="1"
+            android:src="@drawable/ic_indicator_before" />
 
     </LinearLayout>
 
@@ -50,33 +51,36 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_margin="16dp"
-        android:src="@drawable/ic_back_arrow"
         android:background="@android:color/transparent"
+        android:src="@drawable/ic_back_arrow"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/indicator" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="40dp"
         android:text="메시지에 대한 키워드를 고르고\n추가적인 정보를 입력해주세요."
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_margin="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tv_keyword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_back"
         app:layout_constraintVertical_bias="0.15" />
 
     <TextView
         android:id="@+id/tv_keyword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:text="키워드 설정"
         android:textColor="@color/idear_gray_900"
         android:textSize="14sp"
         android:textStyle="bold"
-        android:layout_margin="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -86,66 +90,73 @@
         android:id="@+id/rv_keyword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="12dp"
         android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="12dp"
         app:layout_constraintTop_toBottomOf="@id/tv_keyword" />
 
     <TextView
         android:id="@+id/tv_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="60dp"
         android:text="정보 입력"
         android:textColor="@color/idear_gray_900"
         android:textSize="14sp"
         android:textStyle="bold"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_keyword" />
-    
+
     <EditText
         android:id="@+id/et_info"
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:layout_marginVertical="12dp"
         android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="12dp"
         android:background="@drawable/shape_et_back"
         android:hint="부가 정보를 입력하세요."
+        android:paddingHorizontal="12dp"
+        android:textColor="@color/idear_gray_900"
         android:textColorHint="@color/idear_gray_600"
         android:textSize="14sp"
-        android:textColor="@color/idear_gray_900"
-        android:paddingHorizontal="12dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_info"/>
-    
+        app:layout_constraintTop_toBottomOf="@+id/tv_info" />
+
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/iv_warning"
         android:layout_width="16dp"
         android:layout_height="16dp"
-        android:src="@drawable/ic_alert"
         android:layout_marginHorizontal="12dp"
         android:layout_marginVertical="8dp"
+        android:src="@drawable/ic_alert"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_info"/>
+        app:layout_constraintTop_toBottomOf="@id/et_info" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/idear_gray_500"
-        android:text="호칭이나 요구사항을 넣어 더 좋은 글을 작성할 수 있어요."
         android:layout_marginHorizontal="12dp"
         android:layout_marginVertical="8dp"
+        android:text="호칭이나 요구사항을 넣어 더 좋은 글을 작성할 수 있어요."
+        android:textColor="@color/idear_gray_500"
         app:layout_constraintStart_toEndOf="@id/iv_warning"
         app:layout_constraintTop_toBottomOf="@id/et_info" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_next"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/selector_next_btn"
+        android:enabled="false"
         android:text="다음"
         android:textColor="@color/selector_next_btn_text"
-        android:background="@drawable/selector_next_btn"
-        android:layout_margin="16dp"
-        android:enabled="false"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="48dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
