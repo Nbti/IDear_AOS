@@ -23,7 +23,9 @@ class ProxyWriteAdapter (private val dataList:ArrayList<ProxyWriteData>):
                 viewBinding.upBtn.setOnClickListener {
                     if (!viewBinding.upBtn.isSelected) {
                         viewBinding.upBtn.setImageResource(R.drawable.downbtn)
+                        viewBinding.subCardView.visibility=View.VISIBLE
                         viewBinding.recyclerView.visibility = View.VISIBLE
+
 
                         viewBinding.recyclerView.apply {
                             setHasFixedSize(true)
@@ -33,7 +35,9 @@ class ProxyWriteAdapter (private val dataList:ArrayList<ProxyWriteData>):
                         viewBinding.upBtn.isSelected = true
                     } else {
                         viewBinding.upBtn.setImageResource(R.drawable.upbtn)
+                        viewBinding.subCardView.visibility=View.GONE
                         viewBinding.recyclerView.visibility = View.GONE
+
                         viewBinding.upBtn.isSelected = false
                     }
 

@@ -4,8 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.view.GravityCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.nbit.Idear.databinding.ActivityMainBinding
 import com.nbit.Idear.databinding.MainIncludeDrawerBinding
+import com.nbit.Idear.home.ProxyWriteAdapter
+import com.nbit.Idear.home.ProxyWriteData
+import com.nbit.Idear.home.WriteSubData
 import com.nbit.Idear.mypage.MyPageActivity
 
 // 메인 페이지
@@ -61,5 +65,19 @@ class MainActivity : AppCompatActivity() {
             // 메뉴 닫기
             drawerBinding.mainDrawerLayout.closeDrawer((GravityCompat.END))
         }
+
+
+       // mainBinding=ActivityMainBinding.inflate(layoutInflater)
+
+        val dataDataList:ArrayList<ProxyWriteData> = arrayListOf()
+
+        dataDataList.apply{
+            add(ProxyWriteData(2023,6,12,"꺄아아아아아아아아아",
+                arrayListOf(WriteSubData("와아아아아아아"), WriteSubData("아아아아아"))))
+        }
+
+        mainBinding.mainRecyclerView.layoutManager=LinearLayoutManager(this)
+        val adapter=ProxyWriteAdapter(dataDataList)
+        mainBinding.mainRecyclerView.adapter=adapter
     }
 }
