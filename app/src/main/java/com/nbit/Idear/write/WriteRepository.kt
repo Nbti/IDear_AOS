@@ -8,4 +8,7 @@ class WriteRepository {
         return RetrofitBuilder.writeApi.getTest()
     }
 
+    suspend fun postQuery(params: WriteRequestModel) : Response<WriteResponseModel> {
+        return RetrofitBuilder.writeApi.postQuery(params)
+    }
 }

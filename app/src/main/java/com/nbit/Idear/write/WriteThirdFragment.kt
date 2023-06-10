@@ -33,10 +33,10 @@ class WriteThirdFragment : Fragment() {
         _binding = FragmentWriteThirdBinding.inflate(inflater, container, false)
 
         binding.btnNext.setOnClickListener {
-                parentFragmentManager.beginTransaction()
-                    .add(R.id.fl_write, WriteFourthFragment())
-                    .addToBackStack("Write")
-                    .commit()
+            parentFragmentManager.beginTransaction()
+                .add(R.id.fl_write, WriteFourthFragment())
+                .addToBackStack("Write")
+                .commit()
         }
 
         val itemList = listOf<ProfileData>(

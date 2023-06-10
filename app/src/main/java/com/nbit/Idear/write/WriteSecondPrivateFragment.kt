@@ -38,7 +38,6 @@ class WriteSecondPrivateFragment : Fragment() {
             }
             onNextButton()
             Log.d("TEST","$next")
-            Toast.makeText(context,"클릭한 버튼: $buttonText",Toast.LENGTH_SHORT).show()
         }
 
         FlexboxLayoutManager(context).apply {
