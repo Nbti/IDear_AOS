@@ -7,4 +7,27 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="translate">#00FFFFFF</color>
+
+
+    <color name="not_visible">#00FF0000</color>
+
+    <!-- 서비스 색상 -->
+    <color name="idear_gray_100">#F6F6F6</color>
+    <color name="idear_gray_200">#E8E8E8</color>
+    <color name="idear_gray_300">#C8C8C8</color>
+    <color name="idear_gray_500">#B7B7B7</color>
+    <color name="idear_gray_600">#949494</color>
+    <color name="idear_gray_800">#616161</color>
+    <color name="idear_gray_900">#272727</color>
+    <color name="idear_black">#111111</color>
+
+    <color name="idear_green">#0BA7A3</color>
+    <color name="idear_extra_light_green">#ABDEDD</color>
+    <color name="idear_light_green">#72C5C2</color>
+
+
+    <color name="background">#F5F5F5</color>
+
+
 </resources>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".write.WriteFirstFragment">
+
+    <androidx.constraintlayout.utils.widget.ImageFilterButton
+        android:id="@+id/btn_back"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_item_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/viewpager_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_back"
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <include
+            android:id="@+id/item_text_profile"
+            layout="@layout/item_text_profile" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/et_feedback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_item_profile" />
+
+    <EditText
+        android:id="@+id/et_feedback"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/shape_round_rec"
+        android:hint="피드백을 작성해서 글을 수정해주세요."
+        android:paddingHorizontal="16dp"
+        android:textSize="14sp"
+        android:maxHeight="44dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewpager_text"
+        app:layout_constraintTop_toTopOf="@id/guideline" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_request"
+        android:layout_width="141dp"
+        android:layout_height="30dp"
+        android:paddingHorizontal="28dp"
+        android:background="@drawable/shape_round_rec_request"
+        android:drawableStart="@drawable/ic_rotate"
+        android:text="재요청하기"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/viewpager_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.utils.widget.ImageFilterButton
+        android:id="@+id/btn_navi"
+        android:layout_width="52dp"
+        android:layout_height="44dp"
+        android:background="@drawable/shape_round_rec_navi"
+        android:src="@drawable/ic_navigation"
+        app:layout_constraintBottom_toBottomOf="@+id/et_feedback"
+        app:layout_constraintEnd_toEndOf="@+id/et_feedback" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="56dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
