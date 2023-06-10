@@ -12,7 +12,7 @@
         android:theme="@style/Theme.IDear"
         tools:targetApi="31">
         <activity
-            android:name=".mypage.MyPageActivity"
+            android:name=".write.WriteActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
