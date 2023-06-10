@@ -45,6 +45,7 @@ class MyPageActivity : AppCompatActivity() {
         binding.linearAddProfile.setOnClickListener ( View.OnClickListener {
             // 프로필 추가 페이지
             val intent = Intent(this, AddProfileActivity::class.java)
+            intent.putExtra("mode", "add")
             startActivity(intent)
         })
 
@@ -75,6 +76,8 @@ class MyPageActivity : AppCompatActivity() {
 
     // 수정 페이지 이동
     fun moveToEditPage(profileNum: Int) {
-        Log.d("Click Edit", "프로필 수정------------------")
+        val intent = Intent(this, AddProfileActivity::class.java)
+        intent.putExtra("mode", "edit")
+        startActivity(intent)
     }
 }

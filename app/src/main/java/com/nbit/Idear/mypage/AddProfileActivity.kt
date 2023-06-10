@@ -1,8 +1,8 @@
 package com.nbit.Idear.mypage
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nbit.Idear.R
@@ -35,6 +35,12 @@ class AddProfileActivity : AppCompatActivity() {
         // ViewBinding Setting
         binding = ActivityAddProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val mode = intent.getStringExtra("mode")
+        if(mode == "edit") {
+            binding.btnAddProfileDone.setText(R.string.edit_profile_done)
+            binding.textAddProfileLabel.setText(R.string.edit_profile_label)
+        }
 
         // recyclerview 세팅
         initRecycler()
@@ -73,6 +79,11 @@ class AddProfileActivity : AppCompatActivity() {
         addMbti(MbtiItem("N", "S", true))
         addMbti(MbtiItem("F", "T", true))
         addMbti(MbtiItem("P", "J", true))
+
+        // 이전 버튼
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
 
         // 추가하기 버튼
         binding.btnAddProfileDone.setOnClickListener {

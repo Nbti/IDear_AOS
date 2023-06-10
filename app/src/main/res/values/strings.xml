@@ -12,6 +12,7 @@
     <string name="edit_profile">수정하기</string>
     <string name="add_profile">프로필 추가하기</string>
     <string name="add_profile_label">프로필 추가</string>
+    <string name="edit_profile_label">프로필 수정</string>
     <string name="select_mood_keyword_label">분위기 카테고리</string>
     <string name="select_mood_keyword_notice">프로필이 가지는 나만의 분위기를 골라보세요.</string>
     <string name="select_formal_label">높임말 선택하기</string>
@@ -21,6 +22,7 @@
     <string name="select_mbti_label">MBTI 설정하기</string>
     <string name="select_mbti_notice">나의 가상 프로필 MBTI를 지정해보세요.</string>
     <string name="add_profile_done">추가하기</string>
+    <string name="edit_profile_done">수정 완료</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
