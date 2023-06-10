@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.nbit.Idear.R
 
-class FlexBoxAdapter(private val buttonTextList: List<String>, private val buttonClickListener: (String) -> Unit) : RecyclerView.Adapter<FlexBoxAdapter.ViewHolder>() {
+class FlexBoxAdapter(private val buttonTextList: List<String>, private val buttonClickListener: (String, Boolean) -> Unit) : RecyclerView.Adapter<FlexBoxAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_keyword_btn, parent, false)
@@ -23,7 +23,9 @@ class FlexBoxAdapter(private val buttonTextList: List<String>, private val butto
 
         // 버튼 클릭 리스너 설정
         holder.button.setOnClickListener {
-            buttonClickListener.invoke(buttonText)
+
+            buttonClickListener.invoke(buttonText, holder.button.isSelected)
+            holder.button.isSelected = !holder.button.isSelected
         }
     }
 
