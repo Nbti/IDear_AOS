@@ -61,7 +61,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="다음"
-        android:enabled="true"
+        android:textColor="@color/selector_next_btn_text"
+        android:background="@drawable/selector_next_btn"
+        android:layout_margin="16dp"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
