@@ -9,6 +9,7 @@ import com.nbit.Idear.databinding.ActivityMainBinding
 import com.nbit.Idear.databinding.MainIncludeDrawerBinding
 import com.nbit.Idear.home.ProxyWriteAdapter
 import com.nbit.Idear.home.ProxyWriteData
+import com.nbit.Idear.home.StarActivity
 import com.nbit.Idear.home.WriteSubData
 import com.nbit.Idear.mypage.MyPageActivity
 import com.nbit.Idear.write.WriteActivity
@@ -46,9 +47,10 @@ class MainActivity : AppCompatActivity() {
         // 즐겨찾기 메뉴 버튼 선택
         drawerBinding.btnMenuBookmark.setOnClickListener {
             // 즐겨찾기 목록 이동
-
+            val intent = Intent(this, StarActivity::class.java)
+            startActivity(intent)
             // 메뉴 닫기
-            drawerBinding.mainDrawerLayout.closeDrawer((GravityCompat.END))
+            //drawerBinding.mainDrawerLayout.closeDrawer((GravityCompat.END))
         }
 
         // 환경설정 메뉴 버튼 선택
