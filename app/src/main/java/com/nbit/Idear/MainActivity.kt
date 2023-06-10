@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
                 arrayListOf(WriteSubData("너는 내게 있어서 특별한 존재야. 우리가 ..."),
                     WriteSubData("너는 내게 있어서 특별한 존재야. 우리가..."))))
 
-             */
+
           /*
             add(
                 ProxyWriteData(
