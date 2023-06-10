@@ -43,10 +43,12 @@ class MyPageActivity : AppCompatActivity() {
 
         // 프로필 추가 버튼
         binding.linearAddProfile.setOnClickListener ( View.OnClickListener {
-            // 프로필 추가 페이지
-            val intent = Intent(this, AddProfileActivity::class.java)
-            intent.putExtra("mode", "add")
-            startActivity(intent)
+            if(profileListItems.size < 10) {
+                // 프로필 추가 페이지
+                val intent = Intent(this, AddProfileActivity::class.java)
+                intent.putExtra("mode", "add")
+                startActivity(intent)
+            }
         })
 
     }
@@ -72,10 +74,12 @@ class MyPageActivity : AppCompatActivity() {
             add(item)
         }
         profileListAdapter.notifyDataSetChanged()
+
+        binding.textProfileListCount.text = profileListItems.size.toString()
     }
 
     // 수정 페이지 이동
-    fun moveToEditPage(profileNum: Int) {
+    fun moveToEditPage(profileId: Int) {
         val intent = Intent(this, AddProfileActivity::class.java)
         intent.putExtra("mode", "edit")
         startActivity(intent)
