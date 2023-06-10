@@ -35,8 +35,8 @@ class ProfileListAdapter (
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: ProfileListItem) {
-            //binding.profileIcon.textMoodKeywordForIcon.text = item.moodKeyword
-            //binding.profileIcon.textMbtiForIcon.text = item.mbti
+            binding.profileIcon.textMoodKeywordForIcon.text = item.moodKeyword
+            binding.profileIcon.textMbtiForIcon.text = item.mbti
 
             binding.textMoodKeywordForInfo.text = item.moodKeyword
             binding.textMbtiForInfo.text = item.mbti
@@ -54,7 +54,7 @@ class ProfileListAdapter (
 
             // 수정하기 버튼
             binding.btnEditProfile.setOnClickListener {
-                onClickEditButton(item.profileNum)
+                onClickEditButton(item.profileId)
             }
         }
     }
