@@ -12,10 +12,12 @@
         android:theme="@style/Theme.IDear"
         tools:targetApi="31">
         <activity
-            android:name=".home.StarActivity"
+            android:name=".home.StartInfoActivity"
             android:exported="false">
-
         </activity>
+        <activity
+            android:name=".home.StarActivity"
+            android:exported="false"></activity>
         <activity
             android:name=".mypage.MyPageActivity"
             android:exported="false" />

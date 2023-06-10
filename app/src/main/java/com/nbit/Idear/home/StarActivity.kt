@@ -27,7 +27,7 @@ class StarActivity : AppCompatActivity() {
         binding.leftArrowBtn.setOnClickListener {
             finish()
         }
-        
+
         binding.starRecyclerView.layoutManager= LinearLayoutManager(this)
         val adapter=StarAdapter(dataDataList)
         binding.starRecyclerView.adapter=adapter
