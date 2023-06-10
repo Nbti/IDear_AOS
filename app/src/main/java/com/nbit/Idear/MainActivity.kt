@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.footstep.dangbal.kotlin.src.main.map.ApiService
-import com.footstep.dangbal.kotlin.src.main.map.RetrofitInterface
 import com.nbit.Idear.databinding.ActivityMainBinding
 import com.nbit.Idear.databinding.MainIncludeDrawerBinding
 import com.nbit.Idear.home.ProxyWriteAdapter
@@ -14,8 +12,6 @@ import com.nbit.Idear.home.ProxyWriteData
 import com.nbit.Idear.home.WriteSubData
 import com.nbit.Idear.mypage.MyPageActivity
 import com.nbit.Idear.write.WriteActivity
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 // 메인 페이지
 class MainActivity : AppCompatActivity() {
@@ -118,7 +114,7 @@ class MainActivity : AppCompatActivity() {
          //   .build()
 
        // val apiService = retrofit.create(RetrofitInterface::class.java)
-        val apiService = RetrofitInterface.create()
+       // val apiService = RetrofitInterface.create()
 
 
     }
