@@ -19,7 +19,7 @@
         <activity
             android:name=".home.StarActivity"
             android:exported="false"></activity>
-
+        <activity
             android:name=".mypage.AddProfileActivity"
             android:exported="false" />
 
