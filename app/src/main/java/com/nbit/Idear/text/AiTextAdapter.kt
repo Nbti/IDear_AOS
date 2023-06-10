@@ -49,6 +49,7 @@ class AiTextAdapter(private val buttonClickListener: (String, Int) -> Unit): Rec
             }
             favBtn.setOnClickListener {
                 buttonClickListener.invoke(item.content, 0)
+                favBtn.isSelected = !favBtn.isSelected
             }
             completeBtn.setOnClickListener {
                 buttonClickListener.invoke(item.content, 2)

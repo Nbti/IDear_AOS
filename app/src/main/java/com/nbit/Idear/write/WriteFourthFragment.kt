@@ -6,8 +6,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.nbit.Idear.databinding.FragmentWriteFourthBinding
 import com.nbit.Idear.text.AiTextAdapter
@@ -21,13 +23,34 @@ class WriteFourthFragment : Fragment() {
 
     private var keyboardIsOpen: Boolean = false
 
+    private val viewModel: WriteViewModel by activityViewModels()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentWriteFourthBinding.inflate(inflater, container, false)
+
+        viewModel.firstPage()
+
+        binding.itemTextProfile.tvDate.text = "2023-06-11"
+        binding.itemTextProfile.tvTitle.text = "[${viewModel.dear}]에게 전하는 ${viewModel.type}"
+
+        val drawableArray = arrayOf(
+            com.nbit.Idear.R.drawable.ic_drawable_1,
+            com.nbit.Idear.R.drawable.ic_drawable_2,
+            com.nbit.Idear.R.drawable.ic_drawable_3,
+            com.nbit.Idear.R.drawable.ic_drawable_4,
+            com.nbit.Idear.R.drawable.ic_drawable_5,
+            com.nbit.Idear.R.drawable.ic_drawable_6,
+            com.nbit.Idear.R.drawable.ic_drawable_7,
+            com.nbit.Idear.R.drawable.ic_drawable_8,
+        )
+
+        val randomIndex = (drawableArray.indices).random()
+        binding.itemTextProfile.ivProfile.setImageDrawable(ContextCompat.getDrawable(requireContext(), drawableArray[randomIndex]))
 
         var aiTextAdapter = AiTextAdapter() { aa, type ->
             when (type) {
                 0 -> {
-
+                    viewModel.postFavorite(aa)
                 }
                 1 -> {
                     val intent= Intent(Intent.ACTION_SEND)
@@ -42,14 +65,6 @@ class WriteFourthFragment : Fragment() {
 
         }
 
-
-        val item1 = AiTextResult("1231123123",false)
-        val item2 = AiTextResult("2231123123",false)
-        val item3 = AiTextResult("333",false)
-
-        aiTextAdapter.addItem(item1)
-        aiTextAdapter.addItem(item2)
-        aiTextAdapter.addItem(item3)
         binding.viewpagerText.adapter = aiTextAdapter
 
         val pageMargin = resources.getDimensionPixelOffset(com.nbit.Idear.R.dimen.pageMargin).toFloat()
@@ -69,8 +84,12 @@ class WriteFourthFragment : Fragment() {
         })
 
         binding.btnRequest.setOnClickListener {
-            val item4 = AiTextResult("123123123123",false)
-            aiTextAdapter.addItem(item4)
+            viewModel.firstPage()
+
+        }
+
+        viewModel.chat.observe(viewLifecycleOwner) {
+            aiTextAdapter.addItem(AiTextResult(it.result.contentRes.message?:"", false))
         }
         return binding.root
     }

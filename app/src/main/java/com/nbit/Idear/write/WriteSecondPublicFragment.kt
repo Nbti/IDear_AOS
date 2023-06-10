@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayoutManager
@@ -25,6 +26,7 @@ class WriteSecondPublicFragment : Fragment() {
     private var _binding: FragmentWriteSecondPublicBinding? = null
     private val binding get() = _binding!!
 
+    private val viewModel: WriteViewModel by activityViewModels()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentWriteSecondPublicBinding.inflate(inflater, container, false)
 
@@ -37,10 +39,11 @@ class WriteSecondPublicFragment : Fragment() {
             } else {
                 next ++
             }
+            viewModel.type = buttonText
             onNextButton()
-            Toast.makeText(context,"클릭한 버튼: $buttonText",Toast.LENGTH_SHORT).show()
         }
         binding.btnNext.setOnClickListener {
+            viewModel.content = binding.etInfo.toString()
             parentFragmentManager.beginTransaction()
                 .add(R.id.fl_write, WriteThirdFragment())
                 .addToBackStack("Write")

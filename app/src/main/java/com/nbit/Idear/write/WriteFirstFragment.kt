@@ -39,8 +39,12 @@ class WriteFirstFragment : Fragment() {
             } else {
                 next --
             }
+            viewModel.dear = buttonText
             onNextButton()
-            Toast.makeText(context,"클릭한 버튼: $buttonText",Toast.LENGTH_SHORT).show()
+        }
+
+        binding.btnBack.setOnClickListener {
+
         }
 
         binding.btnPrivate.setOnClickListener {
@@ -81,13 +85,6 @@ class WriteFirstFragment : Fragment() {
                     .addToBackStack("Write")
                     .commit()
         }
-
-        viewModel.test()
-
-
-
-
-
 
         return binding.root
     }
