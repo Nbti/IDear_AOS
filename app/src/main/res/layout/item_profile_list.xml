@@ -2,6 +2,53 @@
 <!-- 프로필 리스트 아이템 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@color/idear_gray_200">
+
+    <include
+        android:id="@+id/profile_icon"
+        layout="@layout/item_profile_icon"/>
+
+    <!-- 내용 -->
+    <LinearLayout
+        android:id="@+id/linear_profile_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal"
+        android:layout_toRightOf="@id/profile_icon"
+        android:layout_centerVertical="true">
+
+        <!-- 엠비티아이 -->
+        <TextView
+            android:id="@+id/text_mbti_for_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ESFP"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <!-- 반말 / 존댓말 -->
+        <TextView
+            android:id="@+id/text_formal_for_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/ 반말"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+        
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_edit_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:text="@string/edit_profile"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"/>
 
 </RelativeLayout>

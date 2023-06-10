@@ -9,6 +9,8 @@
 
     <!-- 마이 페이지 -->
     <string name="my_page_label">프로필</string>
+    <string name="edit_profile">수정하기</string>
+    <string name="add_profile">프로필 추가하기</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

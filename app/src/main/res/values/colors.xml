@@ -23,4 +23,7 @@
     <color name="idear_extra_light_green">#ABDEDD</color>
     <color name="idear_light_green">#72C5C2</color>
 
+    <!-- 프로필 원형 배경 색상 -->
+    <color name="profile_yello">#FFCF86</color>
+
 </resources>
