@@ -28,7 +28,7 @@ class WriteFirstFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentWriteFirstBinding.inflate(inflater, container, false)
 
-        val buttonTextList = listOf("가족","친구","동료","스승","연인","지인","제자","고객") // 버튼에 표시할 텍스트 리스트
+        val buttonTextList = listOf("가족","친구","동료","스승","연인","지인","제자","고객", "상사", "기타") // 버튼에 표시할 텍스트 리스트
         flexBoxAdapter = FlexBoxAdapter(buttonTextList) { buttonText, selected ->
             // 버튼 클릭 이벤트 처리
             if (selected) {
