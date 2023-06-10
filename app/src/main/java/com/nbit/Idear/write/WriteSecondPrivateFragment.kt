@@ -39,6 +39,13 @@ class WriteSecondPrivateFragment : Fragment() {
             binding.rvKeyword.layoutManager = it
             binding.rvKeyword.adapter = flexBoxAdapter
         }
+
+        binding.btnNext.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .add(R.id.fl_write, WriteThirdFragment())
+                .addToBackStack("Write")
+                .commit()
+        }
         return binding.root
     }
 
