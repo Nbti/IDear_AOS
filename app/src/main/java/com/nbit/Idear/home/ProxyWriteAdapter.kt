@@ -92,5 +92,4 @@ class ProxyWriteAdapter (private val dataList:ArrayList<ProxyWriteData>):
         return dataList.size
     }
 
-
 }
