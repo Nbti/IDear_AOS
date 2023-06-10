@@ -1,5 +1,6 @@
 package com.nbit.Idear.home
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,10 +9,15 @@ import com.nbit.Idear.databinding.ItemSubWriteBinding
 class SubAdapter(private val dataList:ArrayList<WriteSubData>):
     RecyclerView.Adapter<SubAdapter.DataViewHolder>(){
     inner class DataViewHolder(private val viewBinding:ItemSubWriteBinding) :RecyclerView.ViewHolder(viewBinding.root){
+        private val context = viewBinding.root.context
 
         fun bind(data:WriteSubData){
             viewBinding.subContentText.text=data.subContent
 
+            viewBinding.rightBtn.setOnClickListener {
+                val intent = Intent(context, WriteRecordInfoActivity::class.java)
+                intent.run { context.startActivity(this) }
+            }
             viewBinding.cardView.setOnClickListener {
 
             }
