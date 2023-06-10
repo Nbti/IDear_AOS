@@ -14,7 +14,8 @@ import com.nbit.Idear.mypage.moodKeywordAdapter.MoodKeywordItem
 
 // mbti 토글 어댑터
 class MbtiAdapter (
-    private val context: Context
+    private val context: Context,
+    val selectMbti: (mbti: String) -> Unit
 ) :
     RecyclerView.Adapter<MbtiAdapter.MbtiViewHolder>(){
 
@@ -42,7 +43,7 @@ class MbtiAdapter (
             binding.textMbtiTopUnselect.text = item.topMbti
 
             binding.textMbtiBottomSelect.text = item.bottomMbti
-            binding.textMbtiTopUnselect.text = item.bottomMbti
+            binding.textMbtiBottomUnselect.text = item.bottomMbti
 
             // mbti 선택 안 됨
             if(item.unselect) {
@@ -81,9 +82,18 @@ class MbtiAdapter (
     }
 
     fun select(position: Int) {
+        var mbtiResult: String = ""
         for(i in 0..(items.size - 1)) {
             items[i].unselect = false
+            if(items[i].isSelectTop) {
+                mbtiResult += items[i].topMbti
+            }
+            else {
+                mbtiResult += items[i].bottomMbti
+            }
         }
+
+        selectMbti(mbtiResult)
         notifyDataSetChanged()
     }
 }

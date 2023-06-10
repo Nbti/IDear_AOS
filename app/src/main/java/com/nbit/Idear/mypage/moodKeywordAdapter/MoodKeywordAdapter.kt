@@ -12,7 +12,7 @@ import com.nbit.Idear.mypage.profileAdapter.ProfileListItem
 
 class MoodKeywordAdapter (
     private val context: Context,
-    private val selectMoodKeyword: () -> Unit
+    private val selectMoodKeyword: (keyWord: String) -> Unit
 ) :
     RecyclerView.Adapter<MoodKeywordAdapter.MoodKeywordViewHolder>(){
 
@@ -35,7 +35,7 @@ class MoodKeywordAdapter (
             items[position].isSelected = true
             allUncheck(position)
 
-            selectMoodKeyword()
+            selectMoodKeyword(items[position].moodKeyword)
         }
     }
 
