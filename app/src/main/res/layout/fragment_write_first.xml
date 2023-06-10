@@ -92,7 +92,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="5dp"
         android:layout_marginTop="12dp"
-        android:drawableTop="@drawable/ic_private_image"
+        android:drawableTop="@drawable/ic_public_image"
         android:background="@drawable/selector_condition"
         android:padding="24dp"
         app:layout_constraintEnd_toStartOf="@+id/btn_private"

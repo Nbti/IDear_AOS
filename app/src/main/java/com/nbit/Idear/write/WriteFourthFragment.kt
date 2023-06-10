@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -29,10 +30,27 @@ class WriteFourthFragment : Fragment() {
 
         viewModel.firstPage()
 
+        binding.itemTextProfile.tvDate.text = "2023-06-11"
+        binding.itemTextProfile.tvTitle.text = "[${viewModel.dear}]에게 전하는 ${viewModel.type}"
+
+        val drawableArray = arrayOf(
+            com.nbit.Idear.R.drawable.ic_drawable_1,
+            com.nbit.Idear.R.drawable.ic_drawable_2,
+            com.nbit.Idear.R.drawable.ic_drawable_3,
+            com.nbit.Idear.R.drawable.ic_drawable_4,
+            com.nbit.Idear.R.drawable.ic_drawable_5,
+            com.nbit.Idear.R.drawable.ic_drawable_6,
+            com.nbit.Idear.R.drawable.ic_drawable_7,
+            com.nbit.Idear.R.drawable.ic_drawable_8,
+        )
+
+        val randomIndex = (drawableArray.indices).random()
+        binding.itemTextProfile.ivProfile.setImageDrawable(ContextCompat.getDrawable(requireContext(), drawableArray[randomIndex]))
+
         var aiTextAdapter = AiTextAdapter() { aa, type ->
             when (type) {
                 0 -> {
-                    //즐겨찾기 추가
+                    viewModel.postFavorite(aa)
                 }
                 1 -> {
                     val intent= Intent(Intent.ACTION_SEND)
@@ -71,8 +89,6 @@ class WriteFourthFragment : Fragment() {
         }
 
         viewModel.chat.observe(viewLifecycleOwner) {
-            binding.itemTextProfile.tvDate.text = it.result.createAt
-            //binding.itemTextProfile.tvTitle.text = "[${it.result.dear}]에게 전하는 ${it.result.type}"
             aiTextAdapter.addItem(AiTextResult(it.result.contentRes.message?:"", false))
         }
         return binding.root

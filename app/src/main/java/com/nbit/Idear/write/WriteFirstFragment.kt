@@ -39,7 +39,12 @@ class WriteFirstFragment : Fragment() {
             } else {
                 next --
             }
+            viewModel.dear = buttonText
             onNextButton()
+        }
+
+        binding.btnBack.setOnClickListener {
+
         }
 
         binding.btnPrivate.setOnClickListener {

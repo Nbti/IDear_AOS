@@ -12,6 +12,7 @@ data class WriteResponseModel(
     var result: WriteResponseModel2
 )
 data class WriteResponseModel2(
+    var id: Int,
     var dear: String,
     var type: String,
     var createAt: String,
@@ -19,6 +20,26 @@ data class WriteResponseModel2(
 )
 
 data class ContentResModel(
+    var id: Int,
     var message: String,
     var finishReason: String
+)
+
+data class ProfileResponseModel(
+    var result: List<ProfileResponseModel2>
+)
+
+data class ProfileResponseModel2(
+    var id : Int,
+    var is_polite: Boolean = false,
+    var mbti: String,
+    var profileKeyword: String,
+    var user: UserResponseModel
+)
+
+data class UserResponseModel(
+    var id: Int,
+    var name:String,
+    var email: String,
+    var password: String
 )
