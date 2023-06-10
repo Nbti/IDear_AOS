@@ -10,6 +10,13 @@
     tools:openDrawer="end"
     android:fitsSystemWindows="true">
 
+    <!--
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="16dp"
+        >
+-->
     <!-- 메인 페이지 -->
     <include
         android:id="@+id/include_main_activity"
@@ -183,5 +190,8 @@
 
 
     </com.google.android.material.navigation.NavigationView>
+    <!--
+    </androidx.cardview.widget.CardView>
+    -->
 
 </androidx.drawerlayout.widget.DrawerLayout>
