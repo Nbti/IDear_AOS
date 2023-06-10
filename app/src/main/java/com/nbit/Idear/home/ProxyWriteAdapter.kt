@@ -13,6 +13,8 @@ class ProxyWriteAdapter (private val dataList:ArrayList<ProxyWriteData>):
     inner class DataViewHolder(private val viewBinding: ItemWriteBinding) : RecyclerView.ViewHolder(viewBinding.root) {
         // var chk=false;
         fun bind(data: ProxyWriteData) {
+            //viewBinding.ivProfile.background=data.image
+            viewBinding.ivProfile.setImageResource(data.image)
             viewBinding.yearText.text = data.year.toString()
             viewBinding.monthText.text = data.month.toString()
             viewBinding.dayText.text = data.day.toString()

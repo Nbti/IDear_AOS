@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-
+<!--
                 <Button
                     android:id="@+id/circle_image"
                     android:layout_width="wrap_content"
@@ -38,7 +38,17 @@
                     android:text="동그라미"
 
                     />
-
+-->
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_profile_test"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="9dp"/>
                 <LinearLayout
                     android:id="@+id/vLinearLayout"
                     android:layout_width="0dp"
