@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- mbti 선택 토글 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="6dp"
+    android:background="@drawable/shape_toggle_mbti_border">
+
+    <TextView
+        android:id="@+id/text_mbti_top_unselect"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="E"
+        android:textColor="@color/idear_gray_800"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/text_mbti_top_select"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="E"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:background="@drawable/shape_unselect_mbti"
+        android:layout_alignParentTop="true"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/text_mbti_bottom_unselect"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="I"
+        android:textColor="@color/idear_gray_800"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_below="@id/text_mbti_top_unselect"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/text_mbti_bottom_select"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="I"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:background="@drawable/shape_unselect_mbti"
+        android:layout_below="@id/text_mbti_top_unselect"
+        android:gravity="center"
+        android:visibility="gone"/>
+
+</RelativeLayout>

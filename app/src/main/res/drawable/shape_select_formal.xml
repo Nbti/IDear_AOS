@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 높임말 선택 버튼 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid
+        android:color="@color/idear_green"/>
+
+    <stroke android:width="1dp"
+        android:color="@color/idear_green"/>
+
+    <corners
+        android:radius="8dp" />
+
+</shape>

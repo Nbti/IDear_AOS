@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 프로필 아이콘 -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear_profile_icon"
+    android:layout_width="48dp"
+    android:layout_height="48dp"
+    android:background="@drawable/shape_profile_icon_circle"
+    android:backgroundTint="@color/idear_light_green"
+    android:layout_centerVertical="true"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <!-- 분위기 키워드 -->
+    <!--<TextView
+        android:id="@+id/text_mood_keyword_for_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="귀여운"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>-->
+
+    <!-- 엠비티아이 -->
+    <!--<TextView
+        android:id="@+id/text_mbti_for_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ESFP"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>-->
+
+</LinearLayout>

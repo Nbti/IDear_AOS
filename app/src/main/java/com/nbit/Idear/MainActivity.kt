@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // 로그인/로그아웃 메뉴 버튼 선택
-        drawerBinding.btnMenuLoginLogout.setOnClickListener {
+        drawerBinding.btnMenuLogout.setOnClickListener {
             // 로그인/로그아웃 이동
 
             // 메뉴 닫기
@@ -70,24 +70,43 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-       // mainBinding=ActivityMainBinding.inflate(layoutInflater)
+        // mainBinding=ActivityMainBinding.inflate(layoutInflater)
 
-        val dataDataList:ArrayList<ProxyWriteData> = arrayListOf()
+        val dataDataList: ArrayList<ProxyWriteData> = arrayListOf()
 
-        dataDataList.apply{
-           /* add(ProxyWriteData(2023,6,12,"친구에게 전하는 생일 편지",
-                "생일 축하해! 이 특별한 날을 기념하여 마음 가득한 축하의 말을 전하고 싶어요. " +
-                        "너의 생일은 항상 특별한 순간이야. 너의 유쾌한 에너지와 친절한 마음으로 언제나 우리 주위를 환하게 " +
-                        "비춰줘서 고마워! 정말...",null))
+        dataDataList.apply {
+            /* add(ProxyWriteData(2023,6,12,"친구에게 전하는 생일 편지",
+                 "생일 축하해! 이 특별한 날을 기념하여 마음 가득한 축하의 말을 전하고 싶어요. " +
+                         "너의 생일은 항상 특별한 순간이야. 너의 유쾌한 에너지와 친절한 마음으로 언제나 우리 주위를 환하게 " +
+                         "비춰줘서 고마워! 정말...",null))
+
 
             */
             add(ProxyWriteData(R.drawable.ic_profile_test,2023,6,12,"친구에게 전하는 생일 편지","생일 축하해! 이 특별한 날을 기념하여 마음 가득한 축하의 말을 전하고 싶어요. 너의 생일은 항상 특별한 순간이야. 너의 유쾌한 에너지와 친절한 마음으로 언제나 우리 주위를 환하게 비춰줘...",
                 arrayListOf(WriteSubData("너는 내게 있어서 특별한 존재야. 우리가 ..."),
                     WriteSubData("너는 내게 있어서 특별한 존재야. 우리가..."))))
 
+             */
+          /*
+            add(
+                ProxyWriteData(
+                    2023,
+                    6,
+                    12,
+                    "친구에게 전하는 생일 편지",
+                    "생일 축하해! 이 특별한 날을 기념하여 마음 가득한 축하의 말을 전하고 싶어요. 너의 생일은 항상 특별한 순간이야. 너의 유쾌한 에너지와 친절한 마음으로 언제나 우리 주위를 환하게 비춰줘...",
+                    arrayListOf(
+                        WriteSubData("너는 내게 있어서 특별한 존재야. 우리가 ..."),
+                        WriteSubData("너는 내게 있어서 특별한 존재야. 우리가...")
+                    )
+                )
+            )
+*/
+
             /*
 
              */
+
             add(ProxyWriteData(R.drawable.profile_image2,2023,6,12,"친구에게 전하는 생일 편지","생일 축하해! 이 특별한 날을 기념하여 마음 가득한 축하의 말을 전하고 싶어요. 너의 생일은 항상 특별한 순간이야. 너의 유쾌한 에너지와 친절한 마음으로 언제나 우리 주위를 환하게 비춰줘...",
                 arrayListOf(WriteSubData("너는 내게 있어서 특별한 존재야. 우리가..."),
                     WriteSubData("너는 내게 있어서 특별한 존재야. 우리가..."),
@@ -100,9 +119,9 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        mainBinding.mainRecyclerView.layoutManager=LinearLayoutManager(this)
-        val adapter=ProxyWriteAdapter(dataDataList)
-        mainBinding.mainRecyclerView.adapter=adapter
+        mainBinding.mainRecyclerView.layoutManager = LinearLayoutManager(this)
+        val adapter = ProxyWriteAdapter(dataDataList)
+        mainBinding.mainRecyclerView.adapter = adapter
 
         mainBinding.fab.setOnClickListener {
 
@@ -110,14 +129,13 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        //val retrofit = Retrofit.Builder()
-         //   .baseUrl("https://api.example.com/") // 서버의 baseUrl을 설정합니다.
-         //   .addConverterFactory(GsonConverterFactory.create()) // JSON 데이터 변환을 위한 Gson 변환기를 추가합니다.
-         //   .build()
-
-       // val apiService = retrofit.create(RetrofitInterface::class.java)
-       // val apiService = RetrofitInterface.create()
-
-
     }
 }
+
+//val retrofit = Retrofit.Builder()
+//   .baseUrl("https://api.example.com/") // 서버의 baseUrl을 설정합니다.
+//   .addConverterFactory(GsonConverterFactory.create()) // JSON 데이터 변환을 위한 Gson 변환기를 추가합니다.
+//   .build()
+
+// val apiService = retrofit.create(RetrofitInterface::class.java)
+// val apiService = RetrofitInterface.crea
