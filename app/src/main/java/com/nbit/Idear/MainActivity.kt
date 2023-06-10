@@ -11,6 +11,7 @@ import com.nbit.Idear.home.ProxyWriteAdapter
 import com.nbit.Idear.home.ProxyWriteData
 import com.nbit.Idear.home.WriteSubData
 import com.nbit.Idear.mypage.MyPageActivity
+import com.nbit.Idear.write.WriteActivity
 
 // 메인 페이지
 class MainActivity : AppCompatActivity() {
@@ -100,5 +101,11 @@ class MainActivity : AppCompatActivity() {
         mainBinding.mainRecyclerView.layoutManager=LinearLayoutManager(this)
         val adapter=ProxyWriteAdapter(dataDataList)
         mainBinding.mainRecyclerView.adapter=adapter
+
+        mainBinding.fab.setOnClickListener {
+
+            val intent = Intent(this, WriteActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
