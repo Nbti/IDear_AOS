@@ -41,7 +41,7 @@ class ProfileListAdapter (
             binding.textFormalForInfo.text = item.formal
 
             // 프로필 원형 배경색
-            binding.profileIcon.linearProfileIcon.setBackgroundColor(item.bgColor)
+            //binding.profileIcon.linearProfileIcon.setBackgroundColor(item.bgColor)
 
             // 수정하기 버튼
             binding.btnEditProfile.setOnClickListener {

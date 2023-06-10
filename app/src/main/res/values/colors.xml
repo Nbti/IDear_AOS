@@ -26,4 +26,6 @@
     <!-- 프로필 원형 배경 색상 -->
     <color name="profile_yello">#FFCF86</color>
 
+    <color name="profile_gray">#D9D9D9</color>
+
 </resources>

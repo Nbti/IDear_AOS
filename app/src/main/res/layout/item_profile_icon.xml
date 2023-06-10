@@ -3,10 +3,8 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/linear_profile_icon"
-    android:layout_width="36dp"
-    android:layout_height="36dp"
-    android:layout_marginLeft="12dp"
-    android:layout_marginVertical="12dp"
+    android:layout_width="48dp"
+    android:layout_height="48dp"
     android:background="@drawable/shape_profile_icon_circle"
     android:backgroundTint="@color/idear_light_green"
     android:layout_centerVertical="true"
