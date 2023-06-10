@@ -7,25 +7,81 @@
     android:background="@color/white"
     tools:context=".write.WriteFirstFragment">
 
+    <LinearLayout
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:layout_width="0dp"
+            android:layout_height="7dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="2dp"
+            android:src="@drawable/ic_indicator_selector"/>
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:layout_width="0dp"
+            android:layout_height="7dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="2dp"
+            android:src="@drawable/ic_indicator_before"/>
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:layout_width="0dp"
+            android:layout_height="7dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="2dp"
+            android:src="@drawable/ic_indicator_before"/>
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:layout_width="0dp"
+            android:layout_height="7dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="2dp"
+            android:src="@drawable/ic_indicator_before"/>
+
+    </LinearLayout>
+
     <androidx.constraintlayout.utils.widget.ImageFilterButton
         android:id="@+id/btn_back"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_margin="16dp"
+        android:src="@drawable/ic_back_arrow"
+        android:background="@android:color/transparent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/indicator" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="상황과 관계를 선택해주세요"
+        android:text="전달할 상황과\n수신인의 관계를 설정해주세요"
         android:textColor="@color/black"
         android:textSize="20sp"
+        android:textStyle="bold"
         android:layout_margin="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.15" />
+
+    <TextView
+        android:id="@+id/tv_condition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="상황"
+        android:textColor="@color/idear_gray_900"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_public"
@@ -35,12 +91,14 @@
         android:text="공적 텍스트"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="12dp"
+        android:drawableTop="@drawable/ic_private_image"
+        android:background="@drawable/selector_condition"
+        android:padding="12dp"
         app:layout_constraintEnd_toStartOf="@+id/btn_private"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35" />
+        app:layout_constraintTop_toBottomOf="@id/tv_condition"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_private"
@@ -50,21 +108,24 @@
         android:text="사적 텍스트"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="12dp"
+        android:drawableTop="@drawable/ic_private_image"
+        android:background="@drawable/selector_condition"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_public"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35" />
+        app:layout_constraintTop_toBottomOf="@id/tv_condition"/>
 
     <TextView
         android:id="@+id/tv_relation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="관계"
-        android:textColor="@color/black"
+        android:textColor="@color/idear_gray_900"
         android:textSize="14sp"
-        android:layout_marginStart="32dp"
+        android:textStyle="bold"
+        android:layout_margin="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -74,8 +135,8 @@
         android:id="@+id/rv_keyword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="16dp"
-        android:layout_marginHorizontal="32dp"
+        android:layout_marginVertical="12dp"
+        android:layout_marginHorizontal="16dp"
         app:layout_constraintTop_toBottomOf="@id/tv_relation" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -83,6 +144,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="다음"
+        android:textColor="@color/selector_next_btn_text"
+        android:background="@drawable/selector_next_btn"
+        android:layout_margin="16dp"
         android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
