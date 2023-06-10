@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">IDear</string>
+
+    <!-- 메인 페이지 메뉴 -->
+    <string name="menu_my_page">마이페이지</string>
+    <string name="menu_bookmark">즐겨찾기 목록</string>
+    <string name="menu_setting">환경설정</string>
+    <string name="menu_login_logout">로그인/로그아웃</string>
+  
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
