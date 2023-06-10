@@ -23,4 +23,7 @@
     <color name="idear_extra_light_green">#ABDEDD</color>
     <color name="idear_light_green">#72C5C2</color>
 
+
+    <color name="background">#F5F5F5</color>
+
 </resources>
