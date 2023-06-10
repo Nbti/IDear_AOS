@@ -9,6 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="translate">#00FFFFFF</color>
 
+
+    <color name="not_visible">#00FF0000</color>
+
     <!-- 서비스 색상 -->
     <color name="idear_gray_100">#F6F6F6</color>
     <color name="idear_gray_200">#E8E8E8</color>
@@ -25,5 +28,6 @@
 
 
     <color name="background">#F5F5F5</color>
+
 
 </resources>
