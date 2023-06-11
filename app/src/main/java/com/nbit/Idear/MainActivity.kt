@@ -3,16 +3,20 @@ package com.nbit.Idear
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nbit.Idear.databinding.ActivityMainBinding
 import com.nbit.Idear.databinding.MainIncludeDrawerBinding
-import com.nbit.Idear.home.ProxyWriteAdapter
-import com.nbit.Idear.home.ProxyWriteData
-import com.nbit.Idear.home.StarActivity
-import com.nbit.Idear.home.WriteSubData
+import com.nbit.Idear.home.*
+import com.nbit.Idear.home.first.GetRecordData
+import com.nbit.Idear.home.star.StarNetData
 import com.nbit.Idear.mypage.MyPageActivity
 import com.nbit.Idear.write.WriteActivity
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 // 메인 페이지
 class MainActivity : AppCompatActivity() {
@@ -71,6 +75,41 @@ class MainActivity : AppCompatActivity() {
 
 
         // mainBinding=ActivityMainBinding.inflate(layoutInflater)
+        val retrofit = Retrofit.Builder()
+            .baseUrl("http://54.180.95.50:9010") // 서버의 baseUrl을 설정합니다.
+            .addConverterFactory(GsonConverterFactory.create()) // JSON 데이터 변환을 위한 Gson 변환기를 추가합니다.
+            .build()
+        val apiService = retrofit.create(ApiService::class.java)
+
+        apiService.getSpecificRecord(1).enqueue(object : Callback<GetRecordData> {
+            override fun onResponse(
+                call: Call<GetRecordData>,
+                response: retrofit2.Response<GetRecordData>
+            ) {
+                if (response.isSuccessful) {
+                    val user = response.body()
+                    //for(i in 0 until user?.result!!.size){
+                    //    user.result[i].
+                    //}
+
+                    Log.d("서버값2",user!!.result[0].contentReslist[0].content.toString())
+
+                    // 서버로부터 받은 데이터를 처리합니다.
+                } else {
+                    // 서버 응답이 실패한 경우 처리합니다.
+                    Log.d("서버값2","성공-실패")
+
+                }
+            }
+
+            override fun onFailure(call: Call<GetRecordData>, t: Throwable) {
+                // 네트워크 오류 등 예외가 발생한 경우 처리합니다.
+                Log.d("서버값2",t.toString())
+
+            }
+
+
+        })
 
         val dataDataList: ArrayList<ProxyWriteData> = arrayListOf()
 
