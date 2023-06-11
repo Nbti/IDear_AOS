@@ -61,4 +61,14 @@ class WriteViewModel(private val repo: WriteRepository, val context: Context): V
             e.printStackTrace()
         }
     }
+
+    fun postFeedback(content: String) {
+        try {
+            viewModelScope.launch {
+                _chat.value =  repo.postFeedback(content,chat.value?.result?.id?:0).body()
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
 }
