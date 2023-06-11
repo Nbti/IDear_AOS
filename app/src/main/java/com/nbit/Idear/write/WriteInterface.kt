@@ -18,4 +18,10 @@ interface WriteInterface {
     suspend fun postFavorite(
         @Body params: String
     )
+
+    @POST("/app/home/query/{queryId}")
+    suspend fun postFeedback(
+        @Path("queryId") path: Int,
+        @Body params: String
+    ): Response<WriteResponseModel>
 }

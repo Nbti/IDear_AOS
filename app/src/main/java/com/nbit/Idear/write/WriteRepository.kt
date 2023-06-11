@@ -15,4 +15,8 @@ class WriteRepository {
     suspend fun postFavorite(content: String) {
         RetrofitBuilder.writeApi.postFavorite(content)
     }
+
+    suspend fun postFeedback(content: String, id: Int ) : Response<WriteResponseModel>{
+        return RetrofitBuilder.writeApi.postFeedback(id, content)
+    }
 }

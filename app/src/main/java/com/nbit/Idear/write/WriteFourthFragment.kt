@@ -83,6 +83,11 @@ class WriteFourthFragment : Fragment() {
             }
         })
 
+        binding.btnNavi.setOnClickListener {
+            viewModel.postFeedback(binding.etFeedback.text.toString())
+            binding.etFeedback.text.clear()
+        }
+
         binding.btnRequest.setOnClickListener {
             viewModel.firstPage()
 
