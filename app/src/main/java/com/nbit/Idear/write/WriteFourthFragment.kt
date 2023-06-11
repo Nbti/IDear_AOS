@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
@@ -94,6 +95,7 @@ class WriteFourthFragment : Fragment() {
         }
 
         viewModel.chat.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), "새로운 답변이 도착했습니다.",Toast.LENGTH_SHORT).show()
             aiTextAdapter.addItem(AiTextResult(it.result.contentRes.message?:"", false))
         }
         return binding.root
