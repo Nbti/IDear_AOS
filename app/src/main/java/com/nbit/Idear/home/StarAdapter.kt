@@ -15,7 +15,7 @@ import com.nbit.Idear.databinding.ItemWriteBinding
 import com.nbit.Idear.home.star.ResultSpecific
 import com.nbit.Idear.write.WriteActivity
 
-/*class StarAdapter (private val dataList:ArrayList<ResultSpecific>?):
+class StarAdapter (private val dataList:ArrayList<ResultSpecific>?):
     RecyclerView.Adapter<StarAdapter.DataViewHolder>() {
     inner class DataViewHolder(private val viewBinding: ItemStarBinding) : RecyclerView.ViewHolder(viewBinding.root) {
         // var chk=false;
@@ -68,8 +68,9 @@ import com.nbit.Idear.write.WriteActivity
 
 }
 
- */
 
+
+/*
 class StarAdapter (private val dataList:ArrayList<StarData>):
     RecyclerView.Adapter<StarAdapter.DataViewHolder>() {
     inner class DataViewHolder(private val viewBinding: ItemStarBinding) : RecyclerView.ViewHolder(viewBinding.root) {
@@ -122,3 +123,5 @@ class StarAdapter (private val dataList:ArrayList<StarData>):
 
 
 }
+
+ */
