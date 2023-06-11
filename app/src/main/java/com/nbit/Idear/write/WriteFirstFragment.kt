@@ -31,20 +31,14 @@ class WriteFirstFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentWriteFirstBinding.inflate(inflater, container, false)
 
-        val buttonTextList = listOf(
-            KeyWordBtn("가족"),
-            KeyWordBtn("친구"),
-            KeyWordBtn("동료"),
-            KeyWordBtn("스승"),
-            KeyWordBtn("연인"),
-            KeyWordBtn("지인"),
-            KeyWordBtn("제자"),
-            KeyWordBtn("고객"),
-            KeyWordBtn("상사"),
-            KeyWordBtn("기타")) // 버튼에 표시할 텍스트 리스트
-        flexBoxAdapter = FlexBoxAdapter(buttonTextList) { buttonText ->
+        val buttonTextList = listOf("가족","친구","동료","스승","연인","지인","제자","고객", "상사", "기타") // 버튼에 표시할 텍스트 리스트
+        flexBoxAdapter = FlexBoxAdapter(buttonTextList) { buttonText, selected ->
             // 버튼 클릭 이벤트 처리
-            next ++
+            if (selected) {
+                next ++
+            } else {
+                next --
+            }
             viewModel.dear = buttonText
             onNextButton()
         }
