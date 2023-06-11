@@ -43,7 +43,7 @@ class WriteSecondPublicFragment : Fragment() {
             onNextButton()
         }
         binding.btnNext.setOnClickListener {
-            viewModel.content = binding.etInfo.toString()
+            viewModel.content = binding.etInfo.text.toString()
             parentFragmentManager.beginTransaction()
                 .add(R.id.fl_write, WriteThirdFragment())
                 .addToBackStack("Write")
