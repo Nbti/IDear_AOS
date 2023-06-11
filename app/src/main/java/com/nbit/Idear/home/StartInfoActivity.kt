@@ -12,7 +12,9 @@ class StartInfoActivity : AppCompatActivity() {
 
         binding=ActivityStartInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
-/*
+
+
+
         val extras=intent.extras
 
         val yearData=extras!!.getInt("result1")
@@ -26,7 +28,7 @@ class StartInfoActivity : AppCompatActivity() {
 
         binding.tvAiText.text=contentData.toString()
 
- */
+
 
         binding.leftArrowBtn.setOnClickListener {
             finish()

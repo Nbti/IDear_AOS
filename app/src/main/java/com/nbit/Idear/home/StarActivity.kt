@@ -39,7 +39,7 @@ class StarActivity : AppCompatActivity() {
 
         val apiService = retrofit.create(ApiService::class.java)
 
-        apiService.getStar("1").enqueue(object : Callback<StarNetData> {
+        apiService.getStar(1).enqueue(object : Callback<StarNetData> {
             override fun onResponse(
                 call: Call<StarNetData>,
                 response: retrofit2.Response<StarNetData>
@@ -49,8 +49,12 @@ class StarActivity : AppCompatActivity() {
                     //for(i in 0 until user?.result!!.size){
                     //    user.result[i].
                     //}
-                    userArr=user?.result
-                    Log.d("서버값",user?.result.toString())
+                    userArr=user!!.result
+                    Log.d("서버값",user!!.result.toString())
+                    binding.starRecyclerView.layoutManager= LinearLayoutManager(this@StarActivity)
+
+                    val adapter=StarAdapter(userArr)
+                    binding.starRecyclerView.adapter=adapter
                     // 서버로부터 받은 데이터를 처리합니다.
                 } else {
                     // 서버 응답이 실패한 경우 처리합니다.
@@ -73,11 +77,10 @@ class StarActivity : AppCompatActivity() {
             finish()
         }
 
-        binding.starRecyclerView.layoutManager= LinearLayoutManager(this)
-        val adapter=StarAdapter(dataDataList)
-        binding.starRecyclerView.adapter=adapter
+       // binding.starRecyclerView.layoutManager= LinearLayoutManager(this)
 
-
+        //val adapter=StarAdapter(userArr)
+        //binding.starRecyclerView.adapter=adapter
 
 
     }

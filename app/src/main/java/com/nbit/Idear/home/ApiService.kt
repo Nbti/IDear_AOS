@@ -12,7 +12,11 @@ import retrofit2.http.Path
 
 interface ApiService {
     @GET("/mypage/content/starred/{userId}")
-    fun getStar(@Path("userId") username: String): Call<StarNetData>
+    fun getStar(@Path("userId") userId: Int): Call<StarNetData>
+
+    //home/query/content/{contentId}
+    @GET("/home/query/content/{contentId}")
+    fun getSpecificRecord(@Path("contentId") contentId: Int): Call<StarNetData>
 
     companion object {
         fun create(): ApiService {
