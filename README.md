@@ -39,3 +39,8 @@
 <a href="https://spring.io/projects/spring-boot" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" alt="springboot" height="24"/> </a> <!-- SpringBoot -->
 <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white" alt="java" height="24"/> </a> <!-- Java -->
 <a href="https://chat.openai.com/" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/chat_openai-412991?style=for-the-badge&logo=openai&logoColor=white" alt="openai" height="24"/> </a> <!-- Chat OpenAI -->
+
+## 🔥 Result
+![Slide 16_9 - 18](https://github.com/Nbti/IDear_AOS/assets/76805879/a9f4dcb2-1299-4118-8fa8-9394108f846e)
+![Slide 16_9 - 19](https://github.com/Nbti/IDear_AOS/assets/76805879/0fae5379-e1e4-4526-a8ab-4e7b1effddad)
+![Slide 16_9 - 20](https://github.com/Nbti/IDear_AOS/assets/76805879/b7137806-577d-4998-aad8-cf551d3883b9)
